@@ -119,7 +119,7 @@ $desa = App\Desa::find(1);
                     </div>
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-right text-muted">
-                            Powered By Rosdiana
+                            Powered By Kelas pake jet
                         </div>
                     </div>
                 </div>
