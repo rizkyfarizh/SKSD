@@ -12,4 +12,9 @@ class Role extends Model
     {
         return $this->hasMany(UserRole::class, 'role_id');
     }
+
+    public function roleHakAkses()
+    {
+        return $this->hasMany(RoleHakAkses::class, 'role_id');
+    }
 }
