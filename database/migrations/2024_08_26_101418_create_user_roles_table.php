@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->bigInteger("user_id");
             $table->bigInteger("role_id");
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 
@@ -23,6 +26,11 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('user_roles', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['role_id']);
+        });
+
         Schema::dropIfExists('user_roles');
     }
 };
