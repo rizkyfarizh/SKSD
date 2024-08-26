@@ -138,6 +138,9 @@ $desa = App\Desa::find(1);
                                 <a class="dropdown-item" href="{{ route('dashboard') }}">
                                     <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Dashboard
                                 </a>
+                                <a class="dropdown-item" href="{{ route('modul.index') }}">
+                                    <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Modul
+                                </a>
                                 <a class="dropdown-item" href="{{ route('penduduk.index') }}">
                                     <i class="fas fa-fw fa-users text-info"></i> Kelola Penduduk
                                 </a>
@@ -218,7 +221,7 @@ $desa = App\Desa::find(1);
                     </div>
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-right text-muted">
-                            Powered By MCDEV
+                            Powered By Kelas pake jet
                         </div>
                     </div>
                 </div>

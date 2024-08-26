@@ -101,6 +101,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('detailDusun', 'DetailDusunController')->except('create', 'edit');
 
     Route::get('/chart-surat/{id}', 'SuratController@chartSurat')->name('chart-surat');
+
+    Route::get('/tambah-modul', 'ModulController@create')->name('modul.create');
+    Route::resource('modul', 'ModulController')->except('create', 'show');
+    Route::resource('detailModul', 'DetailModulController')->except('create', 'edit');
 });
 
 Route::fallback(function () {
