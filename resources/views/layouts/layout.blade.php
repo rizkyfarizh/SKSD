@@ -56,7 +56,7 @@ $desa = App\Desa::find(1);
         <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
             <div class="container px-4">
                 <a class="navbar-brand" href="{{ url('') }}">
-                    <h2 class="h1 text-white"><b>Desa {{ $desa->nama_desa }}</b></h2>
+                    <h2 class="h1 text-white"><b>PELAYANAN SKSD</b></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,6 +105,12 @@ $desa = App\Desa::find(1);
                                     <i class="fas fa-fw fa-atlas text-success"></i>
                                     <span class="nav-link-inner--text">Pemerintahan Desa</span>
                                 </a>
+                                <a class="dropdown-item @if (Request::segment(1) == 'berita') active @endif"
+                                    href="{{ route('masuk') }}">
+                                    <i class="fas fa-user"></i>
+                                    <span class="nav-link-inner--text">Login</span>
+                                </a>
+
                                 {{-- <a class="dropdown-item @if (Request::segment(1) == 'berita') active @endif"
                                     href="{{ route('berita') }}">
                                     <i class="fas fa-fw fa-newspaper text-cyan"></i>
@@ -115,10 +121,10 @@ $desa = App\Desa::find(1);
                                     <i class="fas fa-fw fa-images text-orange"></i>
                                     <span class="nav-link-inner--text">Gallery</span>
                                 </a> --}}
-                                <a class="dropdown-item @if (Request::segment(1) == 'statistik-penduduk') active @endif"
+                                {{-- <a class="dropdown-item @if (Request::segment(1) == 'statistik-penduduk') active @endif"
                                     href="{{ route('statistik-penduduk') }}">
                                     <i class="fas fa-fw fa-chart-pie text-info"></i>
-                                    <span class="nav-link-inner--text">Statistik Penduduk</span>
+                                    <span class="nav-link-inner--text">Statistik Penduduk</span> --}}
                                 </a>
                                 {{-- <a
                                     class="dropdown-item @if (Request::segment(1) == 'laporan-apbdes') active @endif"
@@ -137,26 +143,23 @@ $desa = App\Desa::find(1);
                             <div class="dropdown-menu dropdown-menu-right py-0 overflow-hidden">
                                 <a class="dropdown-item" href="{{ route('dashboard') }}">
                                     <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Dashboard
-                                </a>
-                                <a class="dropdown-item" href="{{ route('modul.index') }}">
-                                    <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Modul
-                                </a>
+                                {{-- </a>
                                 <a class="dropdown-item" href="{{ route('penduduk.index') }}">
                                     <i class="fas fa-fw fa-users text-info"></i> Kelola Penduduk
                                 </a>
                                 <a class="dropdown-item" href="{{ route('dusun.index') }}">
                                     <i class="fas fa-fw fa-map-marker-alt text-yellow"></i> Kelola Dusun
-                                </a>
+                                </a> --}}
                                 <a class="dropdown-item"
                                     href="{{ url('anggaran-realisasi?jenis=pendapatan&tahun='.date('Y')) }}">
                                     <i class="fas fa-fw fa-coins text-success"></i> Kelola APBDes
                                 </a>
                                 <a class="dropdown-item" href="{{ route('surat.index') }}">
                                     <i class="fas fa-fw fa-file-alt text-primary"></i> Kelola Surat
-                                </a>
+                                {{-- </a>
                                 <a href="{{ route('pemerintahan-desa.index') }}" class="dropdown-item">
                                     <i class="fas fa-fw fa-atlas text-success"></i> Kelola Informasi Pemerintahan Desa
-                                </a>
+                                </a> --}}
                                 {{-- <a href="{{ route('berita.index') }}" class="dropdown-item">
                                     <i class="fas fa-fw fa-newspaper text-cyan"></i> Kelola Berita
                                 </a> --}}
@@ -189,7 +192,7 @@ $desa = App\Desa::find(1);
             </div>
         </nav>
         <!-- Header -->
-        <div class="header bg-gradient-primary py-7 py-lg-8">
+        <div class="header py-7 py-lg-8" style="background: linear-gradient(87deg, #b13d3d 0, #4b0000 100%);">
             <div class="container">
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
@@ -199,12 +202,15 @@ $desa = App\Desa::find(1);
                     </div>
                 </div>
             </div>
+        </div>
+        
             <div class="separator separator-bottom separator-skew zindex-100">
                 <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
                     xmlns="http://www.w3.org/2000/svg">
-                    <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+                    <polygon class="fill-default" points="2560 0 2560 100 0 100" style="fill: rgb(54, 54, 54);"></polygon>
                 </svg>
             </div>
+            
         </div>
         <!-- Page content -->
         <div class="container mt--8 pb-5">
@@ -216,12 +222,12 @@ $desa = App\Desa::find(1);
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-left text-muted">
                             © {{ date('Y') }} <a href="{{ url('') }}" class="font-weight-bold ml-1" target="_blank">Desa
-                                {{ $desa->nama_desa }}</a>
+                                </a>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-right text-muted">
-                            Powered By Kelas pake jet
+                            Powered By MCDEV
                         </div>
                     </div>
                 </div>

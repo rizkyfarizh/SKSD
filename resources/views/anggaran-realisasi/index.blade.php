@@ -62,15 +62,16 @@
         </div>
         <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered">
-                <thead>
+                <thead class="text-center">
                     <th width="100px">#</th>
                     <th>Rincian</th>
                     <th>Anggaran</th>
                     <th>Realisasi</th>
                     <th>Ditambahkan pada</th>
                     <th>Diperbarui pada</th>
+                    <th>Detail Jenis Anggaran</th>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                     @forelse ($anggaran_realisasi as $item)
                         <tr>
                             <td>
@@ -82,15 +83,17 @@
                             <td>Rp. {{ substr(number_format($item->nilai_realisasi, 2, ',', '.'),0,-3) }}</td>
                             <td>{{ date('d/m/Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>{{ date('d/m/Y H:i:s', strtotime($item->updated_at)) }}</td>
+                            <td>Rp. {{ substr(number_format($item->jenis_anggaran, 2, ',', '.'),0,-3) }}</td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" align="center">Data tidak tersedia</td>
+                            <td colspan="7" align="center">Data tidak tersedia</td>
                         </tr>
                     @endforelse
                 </tbody>
             </table>
         </div>
+        
         {{ $anggaran_realisasi->links() }}
     </div>
 </div>
